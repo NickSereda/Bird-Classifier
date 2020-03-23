@@ -75,6 +75,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="birdImageView" destination="7lg-fL-clT" id="mBI-im-a1U"/>
                         <outlet property="birdsTableView" destination="7lg-fL-clT" id="hur-Hu-0Qt"/>
                         <outlet property="tableView" destination="NPm-QS-RyM" id="b3t-Cy-eRN"/>
                     </connections>

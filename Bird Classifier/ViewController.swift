@@ -9,8 +9,10 @@
 import UIKit
 import CoreML
 import Vision
+import Alamofire
+import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var birdImageView: UIImageView!
     
@@ -18,11 +20,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+    var birdInfo = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+       // tableView.estimatedRowHeight = 85.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.isHidden = true
     }
 
+    //MARK: - Table View Methods
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        cell.descriptionLabel.text = birdInfo
+        return cell
+    }
+    
+    
     @IBAction func cameraButtonClicked(_ sender: Any) {
     let picker = UIImagePickerController()
     picker.delegate = self
@@ -58,20 +78,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       //  print(request.results)
             if let firstResult = results.first {
                 var title = firstResult.identifier.uppercased()
+                var data = firstResult.identifier.lowercased()
                 self.navigationItem.title = title
                 self.tableView.isHidden = false
-//                var titleString = firstResult.identifier.lowercased()
-//                var a = ""
-//                var b = ""
-//                if let first = titleString.components(separatedBy: " ").first {
-//                    a = first
-//                }
-//                if let last = titleString.components(separatedBy: " ").last {
-//                    b = last
-//                }
-//
-              //  self.wikiManager.fetchDataFromWiki(flower: "\(a)%20\(b)")
-                    
+                self.requestInfo(birdName: data)
+                self.tableView.reloadData()
                 } else {
                     self.navigationItem.title = "Unknown bird"
                 }
@@ -84,19 +95,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("error")
         }
     }
+     //MARK: - Fetching Data from Wikipedia
     
-    //MARK: - Table View Methods
+    let wikipediaURL = "https://en.wikipedia.org/w/api.php"
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+    func requestInfo(birdName: String) {
+           //making Alamofire request
+           
+           let parameters : [String:String] = [
+               "format" : "json",
+               "action" : "query",
+               "prop" : "extracts",
+               "exintro" : "",
+               "explaintext" : "",
+               "titles" : birdName,
+               "indexpageids" : "",
+               "redirects" : "1",
+               "pithumbsize" : "500"
+           ]
+           
+           AF.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { (response) in
+             
+               let birdJSON : JSON = JSON(response.value)
+               let pageid = birdJSON["query"]["pageids"][0].stringValue
+               print(pageid)
+               let birdDescription = birdJSON["query"]["pages"][pageid]["extract"].stringValue
+            //  print(birdDescription)
+              
+               //adding label text
+            self.birdInfo = birdDescription
+            self.tableView.reloadData()
+            print(self.birdInfo)
+            
+           }
+       }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.descriptionLabel.text = "This is a bird"
-        return cell
-    }
-    
+
 
 
 }

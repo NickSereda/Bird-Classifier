@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var birdsTableView: UIImageView!
 
-
     
     var birdInfo = String()
     
@@ -28,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.dataSource = self
         myTableView.delegate = self
         myTableView.isHidden = true
+        
         myTableView.separatorStyle = .none
         myTableView.estimatedRowHeight = myTableView.rowHeight
         myTableView.rowHeight = UITableView.automaticDimension

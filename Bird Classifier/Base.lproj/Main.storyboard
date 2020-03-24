@@ -19,25 +19,28 @@
                                 <rect key="frame" x="0.0" y="504" width="414" height="372"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="189" id="Kkd-fx-Fd7" customClass="TableViewCell" customModule="Bird_Classifier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="189"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Kkd-fx-Fd7" customClass="TableViewCell" customModule="Bird_Classifier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="589.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kkd-fx-Fd7" id="g1C-au-b6R" customClass="TableViewCell" customModule="Bird_Classifier" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kkd-fx-Fd7" id="g1C-au-b6R" customClass="TableViewCell" customModule="Bird_Classifier" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="589.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-vf-kDz">
-                                                    <rect key="frame" x="20" y="11" width="374" height="167"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-vf-kDz">
+                                                    <rect key="frame" x="25" y="16" width="374" height="567.5"/>
+                                                    <mutableString key="text">Miusov, as a man man of breeding and deilcacy, could not but feel some inwrd qualms, when he reached the Father Superior's with Ivan: he felt ashamed of havin lost his temper. He felt that he ought to have disdaimed that despicable wretch, Fyodor Pavlovitch, too much to have been upset by him in Father Zossima's cell, and so to have forgotten himself. "Teh monks were not to blame, in any case," he reflceted, on the steps. "And if they're decent people here (and the Father Superior, I understand, is a nobleman) why not be friendly and courteous withthem? I won't argue, I'll fall in with everything, I'll win them by politness, and show them that I've nothing to do with that Aesop, thta buffoon, that Pierrot, and have merely been takken in over this affair, just as they have."
+</mutableString>
                                                     <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="20"/>
                                                     <color key="textColor" red="0.21176470588235294" green="0.30980392156862746" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" red="0.066666666669999999" green="0.59999999999999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="trailing" secondItem="g1C-au-b6R" secondAttribute="trailingMargin" id="9xw-M9-8iF"/>
-                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="top" secondItem="g1C-au-b6R" secondAttribute="topMargin" id="Grf-Oa-u38"/>
-                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="leading" secondItem="g1C-au-b6R" secondAttribute="leadingMargin" id="cTh-3D-1ub"/>
-                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="bottom" secondItem="g1C-au-b6R" secondAttribute="bottomMargin" id="s0c-eP-UiZ"/>
+                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="bottom" secondItem="g1C-au-b6R" secondAttribute="bottomMargin" constant="5" id="8uD-AB-Nyt"/>
+                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="leading" secondItem="g1C-au-b6R" secondAttribute="leadingMargin" constant="5" id="Scl-DX-OZx"/>
+                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="top" secondItem="g1C-au-b6R" secondAttribute="topMargin" constant="5" id="dsx-Dm-3jR"/>
+                                                <constraint firstItem="l3y-vf-kDz" firstAttribute="trailing" secondItem="g1C-au-b6R" secondAttribute="trailingMargin" constant="5" id="uoe-eB-HYi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -46,7 +49,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-fL-clT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-fL-clT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="408"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="408" id="3mj-pF-Po7"/>
@@ -77,7 +80,7 @@
                     <connections>
                         <outlet property="birdImageView" destination="7lg-fL-clT" id="mBI-im-a1U"/>
                         <outlet property="birdsTableView" destination="7lg-fL-clT" id="hur-Hu-0Qt"/>
-                        <outlet property="tableView" destination="NPm-QS-RyM" id="b3t-Cy-eRN"/>
+                        <outlet property="myTableView" destination="NPm-QS-RyM" id="GrP-xe-hAl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,6 +114,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pic" width="364" height="360"/>
+        <image name="picture" width="414" height="408"/>
     </resources>
 </document>

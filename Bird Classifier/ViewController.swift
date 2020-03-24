@@ -12,22 +12,25 @@ import Vision
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var birdImageView: UIImageView!
     
     @IBOutlet weak var birdsTableView: UIImageView!
 
-    @IBOutlet weak var tableView: UITableView!
+
     
     var birdInfo = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-       // tableView.estimatedRowHeight = 85.0
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.isHidden = true
+        myTableView.dataSource = self
+        myTableView.delegate = self
+        myTableView.isHidden = true
+        myTableView.separatorStyle = .none
+        myTableView.estimatedRowHeight = myTableView.rowHeight
+        myTableView.rowHeight = UITableView.automaticDimension
     }
 
     //MARK: - Table View Methods
@@ -38,11 +41,29 @@ class ViewController: UIViewController, UITableViewDataSource, UIImagePickerCont
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
         cell.descriptionLabel.text = birdInfo
+        cell.descriptionLabel.sizeToFit()
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 0 {
+//            return UITableView.automaticDimension
+//        } else {
+//            return 40
+//        }
+//    }
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.section == 0 {
+//            return UITableView.automaticDimension
+//        } else {
+//            return 40
+//        }
+//    }
+    
+     //MARK: - Camera
     @IBAction func cameraButtonClicked(_ sender: Any) {
     let picker = UIImagePickerController()
     picker.delegate = self
@@ -80,9 +101,9 @@ class ViewController: UIViewController, UITableViewDataSource, UIImagePickerCont
                 var title = firstResult.identifier.uppercased()
                 var data = firstResult.identifier.lowercased()
                 self.navigationItem.title = title
-                self.tableView.isHidden = false
+                self.myTableView.isHidden = false
                 self.requestInfo(birdName: data)
-                self.tableView.reloadData()
+                self.myTableView.reloadData()
                 } else {
                     self.navigationItem.title = "Unknown bird"
                 }
@@ -95,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UIImagePickerCont
             print("error")
         }
     }
-     //MARK: - Fetching Data from Wikipedia
+     //MARK: - Wikipedia
     
     let wikipediaURL = "https://en.wikipedia.org/w/api.php"
     
@@ -124,7 +145,7 @@ class ViewController: UIViewController, UITableViewDataSource, UIImagePickerCont
               
                //adding label text
             self.birdInfo = birdDescription
-            self.tableView.reloadData()
+            self.myTableView.reloadData()
             print(self.birdInfo)
             
            }

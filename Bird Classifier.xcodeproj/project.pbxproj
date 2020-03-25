@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		A935C7CD2428E8C60094C998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A935C7CB2428E8C60094C998 /* LaunchScreen.storyboard */; };
 		A935C7D52429486A0094C998 /* BirdImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A935C7D42429486A0094C998 /* BirdImageClassifier 1.mlmodel */; };
 		A935C7D7242948730094C998 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A935C7D6242948730094C998 /* Nunito-Regular.ttf */; };
-		A935C7D924294B410094C998 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935C7D824294B410094C998 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		A935C7CE2428E8C60094C998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A935C7D42429486A0094C998 /* BirdImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "BirdImageClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		A935C7D6242948730094C998 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		A935C7D824294B410094C998 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B175D00659F627227F68DA54 /* Pods_Bird_Classifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bird_Classifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 				A935C7C02428E8C20094C998 /* AppDelegate.swift */,
 				A935C7C22428E8C20094C998 /* SceneDelegate.swift */,
 				A935C7C42428E8C20094C998 /* ViewController.swift */,
-				A935C7D824294B410094C998 /* TableViewCell.swift */,
 				A935C7C62428E8C20094C998 /* Main.storyboard */,
 				A935C7C92428E8C60094C998 /* Assets.xcassets */,
 				A935C7D42429486A0094C998 /* BirdImageClassifier 1.mlmodel */,
@@ -97,7 +94,6 @@
 				0AFE11A1E0BA63E726D03971 /* Pods-Bird Classifier.debug.xcconfig */,
 				9FE974273C767B5DF365C079 /* Pods-Bird Classifier.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A935C7D924294B410094C998 /* TableViewCell.swift in Sources */,
 				A935C7C52428E8C20094C998 /* ViewController.swift in Sources */,
 				A935C7C12428E8C20094C998 /* AppDelegate.swift in Sources */,
 				A935C7C32428E8C20094C998 /* SceneDelegate.swift in Sources */,

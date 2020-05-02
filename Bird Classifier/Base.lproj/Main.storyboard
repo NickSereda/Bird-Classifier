@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XdQ-ua-ucE">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XdQ-ua-ucE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,18 +12,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bird_Classifier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-fL-clT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="408"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takeAPicture" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-fL-clT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="408"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="408" id="3mj-pF-Po7"/>
-                                    <constraint firstAttribute="width" constant="414" id="N00-ew-w4C"/>
+                                    <constraint firstAttribute="height" constant="408" id="MmZ-AC-gyh"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MaX-GF-qKR">
-                                <rect key="frame" x="20" y="504" width="374" height="358"/>
+                                <rect key="frame" x="20" y="460" width="335" height="207"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.066666666669999999" green="0.59999999999999998" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,13 +32,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="7lg-fL-clT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="11m-Pn-9zj"/>
+                            <constraint firstItem="MaX-GF-qKR" firstAttribute="top" secondItem="7lg-fL-clT" secondAttribute="bottom" constant="8" id="14X-Y0-eZF"/>
+                            <constraint firstItem="7lg-fL-clT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4oj-To-m9o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MaX-GF-qKR" secondAttribute="trailing" constant="20" id="FcN-jd-z73"/>
-                            <constraint firstItem="7lg-fL-clT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I9P-LZ-LGc"/>
-                            <constraint firstItem="7lg-fL-clT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="J3K-XD-ddK"/>
                             <constraint firstItem="MaX-GF-qKR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qbr-x1-lCO"/>
-                            <constraint firstItem="7lg-fL-clT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T06-np-Ymn"/>
+                            <constraint firstItem="7lg-fL-clT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X0u-jk-3R5"/>
                             <constraint firstItem="MaX-GF-qKR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hkq-3a-Rfe"/>
-                            <constraint firstItem="MaX-GF-qKR" firstAttribute="top" secondItem="7lg-fL-clT" secondAttribute="bottom" constant="8" id="zLU-VO-BPd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -66,7 +65,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XdQ-ua-ucE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nR4-qx-nM0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="20"/>
@@ -87,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="picture" width="414" height="408"/>
+        <image name="takeAPicture" width="375" height="408"/>
     </resources>
 </document>

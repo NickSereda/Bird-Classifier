@@ -28,7 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
       textView.delegate = self
     
-        textView.isHidden = true
+    textView.isHidden = true
         
     }
 
@@ -77,11 +77,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
       //  print(request.results)
             if let firstResult = results.first {
-                var title = firstResult.identifier.uppercased()
-                var data = firstResult.identifier.lowercased()
-                self.navigationItem.title = title
-                self.textView.isHidden = false
-                self.requestInfo(birdName: data)
+                
+                DispatchQueue.main.async {
+                    let confidenceLevel = ((firstResult.confidence ?? 0) * 100)
+                    let roundedConfidence = Int (confidenceLevel * 100) / 100
+                    print(roundedConfidence)
+                    if roundedConfidence > 50 {
+                        let title = firstResult.identifier.uppercased()
+                        let data = firstResult.identifier.lowercased()
+                        self.navigationItem.title = title
+                        self.textView.isHidden = false
+                        self.requestInfo(birdName: data)
+                        
+                    } else {
+                        self.textView.isHidden = true
+                        self.birdImageView.image = UIImage(named: "oopsLabel")
+                        self.navigationItem.title = "Unknown bird"
+                    }
+   
+                }
 
                 } else {
                     self.navigationItem.title = "Unknown bird"
